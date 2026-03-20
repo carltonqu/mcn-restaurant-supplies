@@ -16,6 +16,10 @@ import {
   CheckCircle,
   MessageCircle,
 } from "lucide-react";
+import ImageGallery from "../components/ImageGallery";
+
+const GOLD_GRADIENT = "linear-gradient(135deg, #F5D060 0%, #C9A227 50%, #A07D1C 100%)";
+const GOLD_GRADIENT_HOVER = "linear-gradient(135deg, #FFE080 0%, #D4A930 50%, #B08020 100%)";
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -128,7 +132,7 @@ export default function Home() {
       >
         <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
           <span style={{ color: "#0a0a0a", fontSize: "1.4rem", fontWeight: 900, letterSpacing: "-0.03em" }}>MCN</span>
-          <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#C9A227", display: "inline-block", marginBottom: "2px" }} />
+          <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: GOLD_GRADIENT, display: "inline-block", marginBottom: "2px" }} />
           <span style={{ color: "#555", fontSize: "0.85rem", fontWeight: 500 }}>Restaurant Supplies</span>
         </div>
         <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
@@ -150,18 +154,18 @@ export default function Home() {
           <a
             href="#quote"
             style={{
-              backgroundColor: "#C9A227",
+              background: GOLD_GRADIENT,
               color: "#0a0a0a",
               padding: "0.55rem 1.25rem",
               borderRadius: "6px",
               fontWeight: 700,
               fontSize: "0.875rem",
               textDecoration: "none",
-              transition: "background-color 0.2s",
+              transition: "all 0.3s ease",
               whiteSpace: "nowrap",
             }}
-            onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#A07D1C")}
-            onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#C9A227")}
+            onMouseEnter={e => (e.currentTarget.style.background = GOLD_GRADIENT_HOVER)}
+            onMouseLeave={e => (e.currentTarget.style.background = GOLD_GRADIENT)}
           >
             Get Free Quote
           </a>
@@ -170,135 +174,156 @@ export default function Home() {
 
       {/* ── 3. Hero Section ── */}
       <section style={{
+        position: "relative",
+        overflow: "hidden",
         padding: "5rem 2rem 4rem",
         backgroundColor: "#ffffff",
-        maxWidth: "1200px",
-        margin: "0 auto",
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gap: "4rem",
-        alignItems: "center",
       }}>
-        {/* Left */}
-        <div>
-          <div style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            backgroundColor: "#F5E6B2",
-            border: "1px solid #C9A227",
-            borderRadius: "50px",
-            padding: "0.4rem 1rem",
-            marginBottom: "1.5rem",
-            fontSize: "0.8rem",
-            color: "#A07D1C",
-            fontWeight: 600,
-          }}>
-            🏭 Direct from China Factories
-          </div>
-          <h1 style={{
-            fontSize: "clamp(2rem, 4vw, 3.2rem)",
-            fontWeight: 900,
-            lineHeight: 1.1,
-            marginBottom: "1.25rem",
-            color: "#0a0a0a",
-            letterSpacing: "-0.02em",
-          }}>
-            Save Up to{" "}
-            <span style={{ color: "#C9A227" }}>30–50%</span>
-            {" "}on Restaurant Equipment & Supplies
-          </h1>
-          <p style={{
-            fontSize: "1.1rem",
-            color: "#555",
-            marginBottom: "2rem",
-            lineHeight: 1.65,
-          }}>
-            Direct factory pricing. No middlemen. Verified suppliers.
-          </p>
-          <div style={{ display: "flex", gap: "1rem", marginBottom: "2rem", flexWrap: "wrap" }}>
-            <a
-              href="#quote"
-              style={{
-                backgroundColor: "#C9A227",
-                color: "#0a0a0a",
-                padding: "0.85rem 2rem",
-                borderRadius: "8px",
-                fontWeight: 700,
-                fontSize: "1rem",
-                textDecoration: "none",
-                transition: "background-color 0.2s",
-              }}
-              onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#A07D1C")}
-              onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#C9A227")}
-            >
-              Get a Free Quote
-            </a>
-            <a
-              href="#offer"
-              style={{
-                backgroundColor: "transparent",
-                color: "#0a0a0a",
-                padding: "0.85rem 2rem",
-                borderRadius: "8px",
-                fontWeight: 700,
-                fontSize: "1rem",
-                textDecoration: "none",
-                border: "2px solid #0a0a0a",
-                transition: "all 0.2s",
-              }}
-              onMouseEnter={e => { e.currentTarget.style.backgroundColor = "#0a0a0a"; e.currentTarget.style.color = "#ffffff"; }}
-              onMouseLeave={e => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "#0a0a0a"; }}
-            >
-              View Products
-            </a>
-          </div>
-          {/* Trust Badges */}
-          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
-            {["✓ Factory Direct", "✓ Verified Suppliers", "✓ PH Market Savings"].map((b) => (
-              <span key={b} style={{
-                fontSize: "0.8rem",
-                fontWeight: 600,
-                color: "#A07D1C",
-                backgroundColor: "#F5E6B2",
-                padding: "0.3rem 0.75rem",
-                borderRadius: "50px",
-                border: "1px solid #C9A227",
-              }}>
-                {b}
-              </span>
-            ))}
-          </div>
-          <p style={{ fontSize: "0.8rem", color: "#888", fontStyle: "italic" }}>
-            Minimum order: ₱200,000
-          </p>
-        </div>
+        {/* Decorative orbs */}
+        <div className="orb orb-gold" style={{ width: "500px", height: "500px", top: "-100px", right: "-100px" }} />
+        <div className="orb orb-gold" style={{ width: "300px", height: "300px", bottom: "-50px", left: "-50px" }} />
 
-        {/* Right: image grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-          <div style={{ gridColumn: "1 / -1" }}>
+        <div style={{
+          maxWidth: "1200px",
+          margin: "0 auto",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "4rem",
+          alignItems: "center",
+          position: "relative",
+          zIndex: 1,
+        }}>
+          {/* Left */}
+          <div>
+            <div style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              background: GOLD_GRADIENT,
+              borderRadius: "50px",
+              padding: "0.4rem 1rem",
+              marginBottom: "1.5rem",
+              fontSize: "0.8rem",
+              color: "#0a0a0a",
+              fontWeight: 600,
+            }}>
+              🏭 Direct from China Factories
+            </div>
+            <h1 style={{
+              fontSize: "clamp(2rem, 4vw, 3.2rem)",
+              fontWeight: 900,
+              lineHeight: 1.1,
+              marginBottom: "1.25rem",
+              color: "#0a0a0a",
+              letterSpacing: "-0.02em",
+            }}>
+              Save Up to{" "}
+              <span style={{
+                background: GOLD_GRADIENT,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}>
+                30–50%
+              </span>
+              {" "}on Restaurant Equipment & Supplies
+            </h1>
+            <p style={{
+              fontSize: "1.1rem",
+              color: "#555",
+              marginBottom: "2rem",
+              lineHeight: 1.65,
+            }}>
+              Direct factory pricing. No middlemen. Verified suppliers.
+            </p>
+            <div style={{ display: "flex", gap: "1rem", marginBottom: "2rem", flexWrap: "wrap" }}>
+              <a
+                href="#quote"
+                style={{
+                  background: GOLD_GRADIENT,
+                  color: "#0a0a0a",
+                  padding: "0.85rem 2rem",
+                  borderRadius: "8px",
+                  fontWeight: 700,
+                  fontSize: "1rem",
+                  textDecoration: "none",
+                  transition: "all 0.3s ease",
+                  display: "inline-block",
+                }}
+                onMouseEnter={e => (e.currentTarget.style.background = GOLD_GRADIENT_HOVER)}
+                onMouseLeave={e => (e.currentTarget.style.background = GOLD_GRADIENT)}
+              >
+                Get a Free Quote
+              </a>
+              <a
+                href="#offer"
+                style={{
+                  backgroundColor: "transparent",
+                  color: "#0a0a0a",
+                  padding: "0.85rem 2rem",
+                  borderRadius: "8px",
+                  fontWeight: 700,
+                  fontSize: "1rem",
+                  textDecoration: "none",
+                  border: "2px solid #0a0a0a",
+                  transition: "all 0.2s",
+                }}
+                onMouseEnter={e => { e.currentTarget.style.backgroundColor = "#0a0a0a"; e.currentTarget.style.color = "#ffffff"; }}
+                onMouseLeave={e => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "#0a0a0a"; }}
+              >
+                View Products
+              </a>
+            </div>
+            {/* Trust Badges */}
+            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
+              {["✓ Factory Direct", "✓ Verified Suppliers", "✓ PH Market Savings"].map((b) => (
+                <span key={b} style={{
+                  fontSize: "0.8rem",
+                  fontWeight: 600,
+                  color: "#0a0a0a",
+                  background: GOLD_GRADIENT,
+                  padding: "0.3rem 0.75rem",
+                  borderRadius: "50px",
+                }}>
+                  {b}
+                </span>
+              ))}
+            </div>
+            <p style={{ fontSize: "0.8rem", color: "#888", fontStyle: "italic" }}>
+              Minimum order: ₱200,000
+            </p>
+          </div>
+
+          {/* Right: image grid */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+            <div style={{ gridColumn: "1 / -1" }}>
+              <img
+                src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=600&h=400&fit=crop"
+                alt="Commercial fryer"
+                style={{ width: "100%", height: "220px", objectFit: "cover", borderRadius: "12px", border: "2px solid transparent", outline: "2px solid #C9A227" }}
+              />
+            </div>
             <img
-              src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=400&fit=crop"
-              alt="Commercial kitchen"
-              style={{ width: "100%", height: "220px", objectFit: "cover", borderRadius: "12px", border: "2px solid #C9A227" }}
+              src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=600&h=400&fit=crop"
+              alt="Commercial kitchen equipment"
+              style={{ width: "100%", height: "150px", objectFit: "cover", borderRadius: "12px", border: "2px solid #e5e0d0", transition: "box-shadow 0.3s ease" }}
+              onMouseEnter={e => (e.currentTarget.style.boxShadow = "0 8px 32px rgba(201,162,39,0.2)")}
+              onMouseLeave={e => (e.currentTarget.style.boxShadow = "none")}
+            />
+            <img
+              src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&h=400&fit=crop"
+              alt="Stainless steel kitchen"
+              style={{ width: "100%", height: "150px", objectFit: "cover", borderRadius: "12px", border: "2px solid #e5e0d0", transition: "box-shadow 0.3s ease" }}
+              onMouseEnter={e => (e.currentTarget.style.boxShadow = "0 8px 32px rgba(201,162,39,0.2)")}
+              onMouseLeave={e => (e.currentTarget.style.boxShadow = "none")}
             />
           </div>
-          <img
-            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop"
-            alt="Restaurant"
-            style={{ width: "100%", height: "150px", objectFit: "cover", borderRadius: "12px", border: "2px solid #e5e0d0" }}
-          />
-          <img
-            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
-            alt="Food"
-            style={{ width: "100%", height: "150px", objectFit: "cover", borderRadius: "12px", border: "2px solid #e5e0d0" }}
-          />
         </div>
       </section>
 
       {/* ── 4. Ticker/Marquee Strip ── */}
       <div style={{
-        backgroundColor: "#C9A227",
+        background: GOLD_GRADIENT,
         color: "#0a0a0a",
         padding: "0.75rem 0",
         overflow: "hidden",
@@ -335,7 +360,10 @@ export default function Home() {
               padding: "1.5rem 1rem",
               borderLeft: i > 0 ? "1px solid #e5e0d0" : "none",
             }}>
-              <div style={{ fontSize: "2rem", fontWeight: 900, color: "#C9A227", marginBottom: "0.35rem" }}>
+              <div
+                className="gold-gradient-text"
+                style={{ fontSize: "2rem", fontWeight: 900, marginBottom: "0.35rem" }}
+              >
                 {stat.num}
               </div>
               <div style={{ fontSize: "0.85rem", color: "#666", fontWeight: 500 }}>{stat.label}</div>
@@ -343,6 +371,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* ── 5b. Image Gallery ── */}
+      <ImageGallery />
 
       {/* ── 6. What We Offer ── */}
       <section id="offer" style={{ padding: "6rem 2rem", backgroundColor: "#ffffff" }}>
@@ -354,7 +385,10 @@ export default function Home() {
               fontWeight: 700,
               letterSpacing: "0.1em",
               textTransform: "uppercase",
-              color: "#C9A227",
+              background: GOLD_GRADIENT,
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
               marginBottom: "0.75rem",
             }}>
               Our Products
@@ -362,6 +396,13 @@ export default function Home() {
             <h2 style={{ fontSize: "2.25rem", fontWeight: 900, color: "#0a0a0a", letterSpacing: "-0.02em" }}>
               Everything Your Restaurant Needs
             </h2>
+            <div style={{
+              width: "60px",
+              height: "3px",
+              background: GOLD_GRADIENT,
+              margin: "0.75rem auto 0",
+              borderRadius: "2px",
+            }} />
           </div>
           <div style={{
             display: "grid",
@@ -380,11 +421,11 @@ export default function Home() {
                 border: "1px solid #e5e0d0",
                 borderRadius: "12px",
                 padding: "2rem",
-                transition: "border-color 0.2s, box-shadow 0.2s",
+                transition: "border-color 0.3s ease, box-shadow 0.3s ease",
               }}
                 onMouseEnter={e => {
                   (e.currentTarget as HTMLDivElement).style.borderColor = "#C9A227";
-                  (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 20px rgba(201,162,39,0.15)";
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 32px rgba(201,162,39,0.2)";
                 }}
                 onMouseLeave={e => {
                   (e.currentTarget as HTMLDivElement).style.borderColor = "#e5e0d0";
@@ -392,7 +433,7 @@ export default function Home() {
                 }}
               >
                 <div style={{
-                  backgroundColor: "#F5E6B2",
+                  background: GOLD_GRADIENT,
                   borderRadius: "10px",
                   width: "48px",
                   height: "48px",
@@ -401,7 +442,7 @@ export default function Home() {
                   justifyContent: "center",
                   marginBottom: "1rem",
                 }}>
-                  <Icon size={22} color="#A07D1C" />
+                  <Icon size={22} color="#0a0a0a" />
                 </div>
                 <h3 style={{ fontWeight: 700, fontSize: "1rem", marginBottom: "0.5rem", color: "#0a0a0a" }}>{title}</h3>
                 <p style={{ fontSize: "0.875rem", color: "#666", lineHeight: 1.6 }}>{desc}</p>
@@ -412,8 +453,12 @@ export default function Home() {
       </section>
 
       {/* ── 7. Why Choose Us ── */}
-      <section id="why" style={{ padding: "6rem 2rem", backgroundColor: "#FAFAF5" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+      <section id="why" style={{ padding: "6rem 2rem", backgroundColor: "#FAFAF5", position: "relative", overflow: "hidden" }}>
+        {/* Decorative orbs */}
+        <div className="orb orb-gold" style={{ width: "400px", height: "400px", top: "-80px", right: "-80px" }} />
+        <div className="orb orb-gold" style={{ width: "250px", height: "250px", bottom: "-60px", left: "-60px" }} />
+
+        <div style={{ maxWidth: "1100px", margin: "0 auto", position: "relative", zIndex: 1 }}>
           <div style={{ textAlign: "center", marginBottom: "3rem" }}>
             <span style={{
               display: "inline-block",
@@ -421,7 +466,10 @@ export default function Home() {
               fontWeight: 700,
               letterSpacing: "0.1em",
               textTransform: "uppercase",
-              color: "#C9A227",
+              background: GOLD_GRADIENT,
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
               marginBottom: "0.75rem",
             }}>
               Our Advantage
@@ -429,6 +477,13 @@ export default function Home() {
             <h2 style={{ fontSize: "2.25rem", fontWeight: 900, color: "#0a0a0a", letterSpacing: "-0.02em" }}>
               Why Smart Restaurants Choose MCN
             </h2>
+            <div style={{
+              width: "60px",
+              height: "3px",
+              background: GOLD_GRADIENT,
+              margin: "0.75rem auto 0",
+              borderRadius: "2px",
+            }} />
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem", alignItems: "start" }}>
             {/* Left: benefits list */}
@@ -448,7 +503,11 @@ export default function Home() {
                   border: "1px solid #e5e0d0",
                   borderRadius: "12px",
                   padding: "1.25rem 1.5rem",
-                }}>
+                  transition: "box-shadow 0.3s ease",
+                }}
+                  onMouseEnter={e => (e.currentTarget.style.boxShadow = "0 8px 32px rgba(201,162,39,0.2)")}
+                  onMouseLeave={e => (e.currentTarget.style.boxShadow = "none")}
+                >
                   <CheckCircle size={20} color="#C9A227" style={{ flexShrink: 0, marginTop: "2px" }} />
                   <div>
                     <div style={{ fontWeight: 700, fontSize: "0.95rem", color: "#0a0a0a", marginBottom: "0.25rem" }}>{title}</div>
@@ -472,12 +531,18 @@ export default function Home() {
                 fontWeight: 700,
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
-                color: "#C9A227",
+                background: GOLD_GRADIENT,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
                 marginBottom: "1.5rem",
               }}>
                 Real Savings
               </div>
-              <div style={{ fontSize: "2.5rem", fontWeight: 900, color: "#C9A227", lineHeight: 1.2, marginBottom: "1rem" }}>
+              <div
+                className="gold-gradient-text"
+                style={{ fontSize: "2.5rem", fontWeight: 900, lineHeight: 1.2, marginBottom: "1rem" }}
+              >
                 Save ₱5,000–<br />₱15,000
               </div>
               <p style={{ color: "#e5e0d0", fontSize: "1rem", lineHeight: 1.6, marginBottom: "2rem" }}>
@@ -485,7 +550,7 @@ export default function Home() {
               </p>
               <a href="#quote" style={{
                 display: "inline-block",
-                backgroundColor: "#C9A227",
+                background: GOLD_GRADIENT,
                 color: "#0a0a0a",
                 padding: "0.75rem 1.5rem",
                 borderRadius: "8px",
@@ -493,7 +558,11 @@ export default function Home() {
                 fontSize: "0.9rem",
                 textDecoration: "none",
                 textAlign: "center",
-              }}>
+                transition: "all 0.3s ease",
+              }}
+                onMouseEnter={e => (e.currentTarget.style.background = GOLD_GRADIENT_HOVER)}
+                onMouseLeave={e => (e.currentTarget.style.background = GOLD_GRADIENT)}
+              >
                 Get Your Quote Now →
               </a>
             </div>
@@ -511,41 +580,58 @@ export default function Home() {
             <p style={{ color: "#666", fontSize: "1rem" }}>
               Compare our prices against the Philippine market
             </p>
+            <div style={{
+              width: "60px",
+              height: "3px",
+              background: GOLD_GRADIENT,
+              margin: "0.75rem auto 0",
+              borderRadius: "2px",
+            }} />
           </div>
-          <div style={{ overflowX: "auto", borderRadius: "12px", border: "1px solid #e5e0d0", overflow: "hidden" }}>
-            <table style={{ width: "100%", borderCollapse: "collapse" }}>
-              <thead>
-                <tr style={{ backgroundColor: "#C9A227" }}>
-                  <th style={{ padding: "1rem 1.5rem", textAlign: "left", fontWeight: 700, color: "#0a0a0a", fontSize: "0.9rem" }}>Item</th>
-                  <th style={{ padding: "1rem 1.5rem", textAlign: "right", fontWeight: 700, color: "#0a0a0a", fontSize: "0.9rem" }}>PH Market Price</th>
-                  <th style={{ padding: "1rem 1.5rem", textAlign: "right", fontWeight: 700, color: "#0a0a0a", fontSize: "0.9rem" }}>MCN Price</th>
-                  <th style={{ padding: "1rem 1.5rem", textAlign: "right", fontWeight: 700, color: "#0a0a0a", fontSize: "0.9rem" }}>You Save</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { item: "Commercial Fryer", ph: 25000, mcn: 15000, save: "₱10,000 (40%)" },
-                  { item: "Stainless Work Table", ph: 18000, mcn: 11000, save: "₱7,000 (39%)" },
-                  { item: "Rice Cooker (Commercial)", ph: 8000, mcn: 4500, save: "₱3,500 (44%)" },
-                ].map(({ item, ph, mcn, save }, i) => (
-                  <tr key={item} style={{
-                    backgroundColor: i % 2 === 0 ? "#ffffff" : "#FAFAF5",
-                    borderTop: "1px solid #e5e0d0",
-                  }}>
-                    <td style={{ padding: "1rem 1.5rem", fontWeight: 600, color: "#0a0a0a" }}>{item}</td>
-                    <td style={{ padding: "1rem 1.5rem", textAlign: "right", color: "#888", textDecoration: "line-through" }}>
-                      ₱{ph.toLocaleString()}
-                    </td>
-                    <td style={{ padding: "1rem 1.5rem", textAlign: "right", color: "#C9A227", fontWeight: 700 }}>
-                      ₱{mcn.toLocaleString()}
-                    </td>
-                    <td style={{ padding: "1rem 1.5rem", textAlign: "right", color: "#16a34a", fontWeight: 700 }}>
-                      {save}
-                    </td>
+          <div style={{ display: "flex", gap: "2rem", alignItems: "flex-start", flexWrap: "wrap" }}>
+            {/* Side image */}
+            <div style={{ flexShrink: 0 }}>
+              <img
+                src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=220&h=300&fit=crop"
+                alt="Commercial kitchen equipment"
+                style={{ width: "200px", height: "280px", objectFit: "cover", borderRadius: "12px", border: "2px solid #C9A227" }}
+              />
+            </div>
+            <div style={{ flex: 1, overflowX: "auto", borderRadius: "12px", border: "1px solid #e5e0d0", overflow: "hidden" }}>
+              <table style={{ width: "100%", borderCollapse: "collapse" }}>
+                <thead>
+                  <tr style={{ background: GOLD_GRADIENT }}>
+                    <th style={{ padding: "1rem 1.5rem", textAlign: "left", fontWeight: 700, color: "#0a0a0a", fontSize: "0.9rem" }}>Item</th>
+                    <th style={{ padding: "1rem 1.5rem", textAlign: "right", fontWeight: 700, color: "#0a0a0a", fontSize: "0.9rem" }}>PH Market Price</th>
+                    <th style={{ padding: "1rem 1.5rem", textAlign: "right", fontWeight: 700, color: "#0a0a0a", fontSize: "0.9rem" }}>MCN Price</th>
+                    <th style={{ padding: "1rem 1.5rem", textAlign: "right", fontWeight: 700, color: "#0a0a0a", fontSize: "0.9rem" }}>You Save</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {[
+                    { item: "Commercial Fryer", ph: 25000, mcn: 15000, save: "₱10,000 (40%)" },
+                    { item: "Stainless Work Table", ph: 18000, mcn: 11000, save: "₱7,000 (39%)" },
+                    { item: "Rice Cooker (Commercial)", ph: 8000, mcn: 4500, save: "₱3,500 (44%)" },
+                  ].map(({ item, ph, mcn, save }, i) => (
+                    <tr key={item} style={{
+                      backgroundColor: i % 2 === 0 ? "#ffffff" : "#FAFAF5",
+                      borderTop: "1px solid #e5e0d0",
+                    }}>
+                      <td style={{ padding: "1rem 1.5rem", fontWeight: 600, color: "#0a0a0a" }}>{item}</td>
+                      <td style={{ padding: "1rem 1.5rem", textAlign: "right", color: "#888", textDecoration: "line-through" }}>
+                        ₱{ph.toLocaleString()}
+                      </td>
+                      <td style={{ padding: "1rem 1.5rem", textAlign: "right", color: "#C9A227", fontWeight: 700 }}>
+                        ₱{mcn.toLocaleString()}
+                      </td>
+                      <td style={{ padding: "1rem 1.5rem", textAlign: "right", color: "#16a34a", fontWeight: 700 }}>
+                        {save}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
           <p style={{
             textAlign: "center",
@@ -554,19 +640,51 @@ export default function Home() {
             fontSize: "0.95rem",
             fontWeight: 600,
           }}>
-            Average savings: <span style={{ color: "#C9A227" }}>20%–50%</span> depending on order volume
+            Average savings:{" "}
+            <span
+              className="gold-gradient-text"
+              style={{ fontWeight: 700 }}
+            >
+              20%–50%
+            </span>
+            {" "}depending on order volume
           </p>
         </div>
       </section>
 
       {/* ── 9. How It Works ── */}
-      <section id="how" style={{ padding: "6rem 2rem", backgroundColor: "#0a0a0a" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+      <section
+        id="how"
+        style={{
+          padding: "6rem 2rem",
+          backgroundColor: "#0a0a0a",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Background image overlay */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "url(https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&h=600&fit=crop)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.05,
+          zIndex: 0,
+        }} />
+        <div style={{ maxWidth: "1100px", margin: "0 auto", position: "relative", zIndex: 1 }}>
           <div style={{ textAlign: "center", marginBottom: "4rem" }}>
             <h2 style={{ fontSize: "2.25rem", fontWeight: 900, color: "#ffffff", letterSpacing: "-0.02em" }}>
               How It Works
             </h2>
             <p style={{ color: "#888", marginTop: "0.75rem", fontSize: "1rem" }}>Simple. Fast. Reliable.</p>
+            <div style={{
+              width: "60px",
+              height: "3px",
+              background: GOLD_GRADIENT,
+              margin: "0.75rem auto 0",
+              borderRadius: "2px",
+            }} />
           </div>
           <div style={{ position: "relative" }}>
             {/* Connecting line */}
@@ -598,7 +716,7 @@ export default function Home() {
                     width: "56px",
                     height: "56px",
                     borderRadius: "50%",
-                    backgroundColor: "#C9A227",
+                    background: GOLD_GRADIENT,
                     color: "#0a0a0a",
                     display: "flex",
                     alignItems: "center",
@@ -621,8 +739,12 @@ export default function Home() {
       </section>
 
       {/* ── 10. Quotation Form ── */}
-      <section id="quote" style={{ padding: "6rem 2rem", backgroundColor: "#FAFAF5" }}>
-        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+      <section id="quote" style={{ padding: "6rem 2rem", backgroundColor: "#FAFAF5", position: "relative", overflow: "hidden" }}>
+        {/* Decorative orbs */}
+        <div className="orb orb-gold" style={{ width: "350px", height: "350px", top: "-80px", right: "-80px" }} />
+        <div className="orb orb-gold" style={{ width: "200px", height: "200px", bottom: "-40px", left: "-40px" }} />
+
+        <div style={{ maxWidth: "800px", margin: "0 auto", position: "relative", zIndex: 1 }}>
           <div style={{ textAlign: "center", marginBottom: "3rem" }}>
             <h2 style={{ fontSize: "2.25rem", fontWeight: 900, color: "#0a0a0a", letterSpacing: "-0.02em", marginBottom: "0.75rem" }}>
               Get Your Free Quote
@@ -630,6 +752,13 @@ export default function Home() {
             <p style={{ color: "#666", fontSize: "1rem" }}>
               Fill out the form and our team will respond within 24–48 hours
             </p>
+            <div style={{
+              width: "60px",
+              height: "3px",
+              background: GOLD_GRADIENT,
+              margin: "0.75rem auto 0",
+              borderRadius: "2px",
+            }} />
           </div>
 
           {submitted ? (
@@ -639,7 +768,7 @@ export default function Home() {
               borderRadius: "16px",
               padding: "3rem 2rem",
               textAlign: "center",
-              boxShadow: "0 4px 20px rgba(201,162,39,0.1)",
+              boxShadow: "0 8px 32px rgba(201,162,39,0.2)",
             }}>
               <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>✅</div>
               <h3 style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: "0.75rem", color: "#0a0a0a" }}>
@@ -756,7 +885,7 @@ export default function Home() {
                 type="submit"
                 disabled={submitting}
                 style={{
-                  backgroundColor: submitting ? "#A07D1C" : "#C9A227",
+                  background: submitting ? "#A07D1C" : GOLD_GRADIENT,
                   color: "#0a0a0a",
                   border: "none",
                   padding: "1rem 2rem",
@@ -764,10 +893,12 @@ export default function Home() {
                   fontWeight: 700,
                   fontSize: "1.05rem",
                   cursor: submitting ? "not-allowed" : "pointer",
-                  transition: "background-color 0.2s",
+                  transition: "all 0.3s ease",
                   width: "100%",
                   fontFamily: "inherit",
                 }}
+                onMouseEnter={e => { if (!submitting) e.currentTarget.style.background = GOLD_GRADIENT_HOVER; }}
+                onMouseLeave={e => { if (!submitting) e.currentTarget.style.background = GOLD_GRADIENT; }}
               >
                 {submitting ? "Submitting..." : "Request Free Quote →"}
               </button>
@@ -784,7 +915,7 @@ export default function Home() {
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", marginBottom: "1rem" }}>
                 <span style={{ fontSize: "1.4rem", fontWeight: 900, color: "#ffffff" }}>MCN</span>
-                <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#C9A227", display: "inline-block" }} />
+                <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: GOLD_GRADIENT, display: "inline-block" }} />
               </div>
               <p style={{ color: "#888", fontSize: "0.875rem", lineHeight: 1.7, maxWidth: "260px" }}>
                 Smart sourcing. Real savings.

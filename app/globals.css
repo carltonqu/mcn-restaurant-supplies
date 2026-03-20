@@ -11,6 +11,8 @@
   --gold-dark: #A07D1C;
   --gold-tint: #FAFAF5;
   --border: #e5e0d0;
+  --gold-gradient: linear-gradient(135deg, #F5D060 0%, #C9A227 50%, #A07D1C 100%);
+  --gold-gradient-hover: linear-gradient(135deg, #FFE080 0%, #D4A930 50%, #B08020 100%);
 }
 
 * {
@@ -62,4 +64,96 @@ select:focus {
   outline: none;
   border-color: #C9A227 !important;
   box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.15);
+}
+
+/* ── Gradient Gold Utilities ── */
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #F5D060 0%, #C9A227 50%, #A07D1C 100%);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F5D060 0%, #C9A227 50%, #A07D1C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-gradient-border {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.gold-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #F5D060 0%, #C9A227 50%, #A07D1C 100%);
+  z-index: -1;
+}
+
+/* ── Decorative Orbs ── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb-gold {
+  background: radial-gradient(circle, #F5D060, #C9A227);
+}
+
+.orb-dark {
+  background: radial-gradient(circle, #333, #000);
+}
+
+/* ── Image Gallery ── */
+.image-gallery-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: #C9A227 transparent;
+}
+
+.image-gallery-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.image-gallery-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.image-gallery-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #F5D060 0%, #C9A227 50%, #A07D1C 100%);
+  border-radius: 2px;
+}
+
+.gallery-card {
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  border-color: #C9A227;
+  box-shadow: 0 8px 32px rgba(201, 162, 39, 0.2);
+}
+
+/* ── Gold Gradient Button ── */
+.btn-gold {
+  background: linear-gradient(135deg, #F5D060 0%, #C9A227 50%, #A07D1C 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #FFE080 0%, #D4A930 50%, #B08020 100%);
 }
