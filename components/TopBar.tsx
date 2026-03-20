@@ -15,7 +15,7 @@ export default function TopBar() {
     >
       {/* Left: contact info */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
-        <span style={{ color: '#ffffff', fontSize: '0.75rem' }}>📱 Viber: +63 XXX XXX XXXX</span>
+        <span style={{ color: '#ffffff', fontSize: '0.75rem' }}>📱 Viber: +63 966 976 5949</span>
         <span style={{ color: '#404040', fontSize: '0.75rem' }}>|</span>
         <span style={{ color: '#ffffff', fontSize: '0.75rem' }}>✉ carltonqu@gmail.com</span>
         <span style={{ color: '#404040', fontSize: '0.75rem' }}>|</span>

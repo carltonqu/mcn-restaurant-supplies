@@ -14,14 +14,8 @@ export default function Footer() {
         >
           {/* Logo + tagline */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '2px', marginBottom: '0.75rem' }}>
-              <span style={{ fontWeight: 800, fontSize: '1.375rem', color: '#ffffff' }}>MCN</span>
-              <span style={{
-                width: '6px', height: '6px', borderRadius: '50%',
-                background: 'linear-gradient(135deg, #FFE566 0%, #F5C800 60%, #D4A800 100%)',
-                display: 'inline-block', margin: '0 2px 8px',
-              }} />
-              <span style={{ fontWeight: 400, fontSize: '1.125rem', color: '#a3a3a3' }}>Supplies</span>
+            <div style={{ marginBottom: '0.75rem' }}>
+              <img src="/mcn-logo.png" alt="MCN Logo" style={{ height: '48px', width: 'auto', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
             </div>
             <p style={{ fontSize: '0.8125rem', color: '#737373', fontStyle: 'italic', lineHeight: 1.6, maxWidth: '200px' }}>
               Direct-from-China restaurant equipment sourcing for Philippine food businesses.
@@ -76,7 +70,7 @@ export default function Footer() {
               </div>
               <div>
                 <p style={{ fontSize: '0.8125rem', color: '#737373', marginBottom: '2px' }}>Viber</p>
-                <p style={{ fontSize: '0.875rem', color: '#a3a3a3' }}>+63 XXX XXX XXXX</p>
+                <p style={{ fontSize: '0.875rem', color: '#a3a3a3' }}>+63 966 976 5949</p>
               </div>
               <div>
                 <p style={{ fontSize: '0.8125rem', color: '#737373', marginBottom: '2px' }}>Location</p>

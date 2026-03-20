@@ -29,14 +29,8 @@ export default function Navbar() {
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
         {/* Logo */}
-        <a href="#" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '2px' }}>
-          <span style={{ fontWeight: 800, fontSize: '1.375rem', color: '#0D0D0D', letterSpacing: '-0.5px' }}>MCN</span>
-          <span style={{
-            width: '6px', height: '6px', borderRadius: '50%',
-            background: 'linear-gradient(135deg, #FFE566 0%, #F5C800 60%, #D4A800 100%)',
-            display: 'inline-block', margin: '0 2px 8px',
-          }} />
-          <span style={{ fontWeight: 400, fontSize: '1.125rem', color: '#404040', letterSpacing: '-0.3px' }}>Supplies</span>
+        <a href="#" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+          <img src="/mcn-logo.png" alt="MCN Logo" style={{ height: '44px', width: 'auto', objectFit: 'contain' }} />
         </a>
 
         {/* Center nav links */}

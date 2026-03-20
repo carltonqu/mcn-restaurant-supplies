@@ -3,7 +3,7 @@
 export default function WhatsAppButton() {
   return (
     <a
-      href="#"
+      href="viber://chat?number=%2B639669765949"
       aria-label="Chat on Viber"
       className="whatsapp-pulse"
       style={{

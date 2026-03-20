@@ -56,7 +56,7 @@ export async function POST(req: NextRequest) {
             <tr style="border-bottom: 1px solid #F5F5F5;"><td style="padding: 0.75rem 0; color: #737373; font-size: 0.85rem; width: 40%;">Full Name</td><td style="padding: 0.75rem 0; font-weight: 600;">${fullName}</td></tr>
             <tr style="border-bottom: 1px solid #F5F5F5;"><td style="padding: 0.75rem 0; color: #737373; font-size: 0.85rem;">Company</td><td style="padding: 0.75rem 0; font-weight: 600;">${companyName}</td></tr>
             <tr style="border-bottom: 1px solid #F5F5F5;"><td style="padding: 0.75rem 0; color: #737373; font-size: 0.85rem;">Email</td><td style="padding: 0.75rem 0; font-weight: 600;"><a href="mailto:${email}" style="color: #D4A800;">${email}</a></td></tr>
-            <tr style="border-bottom: 1px solid #F5F5F5;"><td style="padding: 0.75rem 0; color: #737373; font-size: 0.85rem;">Phone/WhatsApp</td><td style="padding: 0.75rem 0; font-weight: 600;">${phone}</td></tr>
+            <tr style="border-bottom: 1px solid #F5F5F5;"><td style="padding: 0.75rem 0; color: #737373; font-size: 0.85rem;">Phone/Viber</td><td style="padding: 0.75rem 0; font-weight: 600;">${phone}</td></tr>
             <tr style="border-bottom: 1px solid #F5F5F5;"><td style="padding: 0.75rem 0; color: #737373; font-size: 0.85rem;">Business Type</td><td style="padding: 0.75rem 0; font-weight: 600;">${businessType}</td></tr>
             <tr><td style="padding: 0.75rem 0; color: #737373; font-size: 0.85rem;">Budget</td><td style="padding: 0.75rem 0; font-weight: 700; color: #D4A800;">${budget}</td></tr>
           </table>
@@ -93,7 +93,7 @@ export async function POST(req: NextRequest) {
             <p style="margin: 0; color: #F5C800; font-size: 0.85rem; font-weight: 600;">⚠️ Minimum Order Reminder</p>
             <p style="margin: 0.25rem 0 0 0; color: #A3A3A3; font-size: 0.85rem;">Minimum order is <strong style="color: #ffffff;">₱200,000</strong>. This will be confirmed during your quote.</p>
           </div>
-          <p style="line-height: 1.6; color: #737373; font-size: 0.9rem;">For urgent inquiries, reach us on WhatsApp: <a href="https://wa.me/63XXXXXXXXX" style="color: #D4A800; font-weight: 600;">+63 XXXXXXXXX</a></p>
+          <p style="line-height: 1.6; color: #737373; font-size: 0.9rem;">For urgent inquiries, reach us on Viber: <a href="viber://chat?number=%2B639669765949" style="color: #D4A800; font-weight: 600;">+63 966 976 5949</a></p>
         </div>
         <div style="background: #0D0D0D; padding: 1rem 2rem; text-align: center;">
           <p style="color: #737373; font-size: 0.75rem; margin: 0;">MCN Restaurant Supplies Chain Solutions · <span style="color: #F5C800;">Smart sourcing. Real savings.</span></p>
