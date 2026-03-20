@@ -1,33 +1,32 @@
 'use client';
-import { MessageCircle } from 'lucide-react';
 
 export default function WhatsAppButton() {
   return (
-    <>
-      <a
-        href="https://wa.me/63XXXXXXXXX"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="whatsapp-pulse"
-        aria-label="Chat on WhatsApp"
-        style={{
-          position: 'fixed',
-          bottom: '24px',
-          right: '24px',
-          width: '56px',
-          height: '56px',
-          borderRadius: '50%',
-          backgroundColor: '#25D366',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          textDecoration: 'none',
-          zIndex: 1000,
-          cursor: 'pointer',
-        }}
-      >
-        <MessageCircle size={26} color="#ffffff" />
-      </a>
-    </>
+    <a
+      href="#"
+      aria-label="Chat on Viber"
+      className="whatsapp-pulse"
+      style={{
+        position: 'fixed',
+        bottom: '24px',
+        right: '24px',
+        width: '56px',
+        height: '56px',
+        borderRadius: '50%',
+        backgroundColor: '#7360F2',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textDecoration: 'none',
+        zIndex: 1000,
+        cursor: 'pointer',
+        boxShadow: '0 4px 16px rgba(115,96,242,0.4)',
+      }}
+    >
+      {/* Viber SVG logo */}
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.4 0C6.27 0 2.4 3.87 2.4 9v2.4c0 2.07.66 3.99 1.8 5.55L2.4 21.6l5.01-1.74A9.56 9.56 0 0 0 11.4 21c5.13 0 9-3.87 9-9V9c0-5.13-3.87-9-9-9zm0 1.8c4.02 0 7.2 3.18 7.2 7.2v3c0 4.02-3.18 7.2-7.2 7.2a7.77 7.77 0 0 1-3.78-.99l-.42-.24-3.06 1.05.87-3.18-.24-.39A7.17 7.17 0 0 1 4.2 12V9c0-4.02 3.18-7.2 7.2-7.2zm-1.8 3.6c-.33 0-.66.15-.9.42-.57.63-1.44 1.77-1.44 3.18 0 1.41.93 2.79 1.08 2.97.15.21 1.89 3.06 4.68 4.17.66.27 1.17.42 1.56.54.66.18 1.26.15 1.74.09.54-.09 1.65-.66 1.89-1.32.24-.66.24-1.2.18-1.32-.06-.12-.24-.18-.51-.33-.27-.15-1.62-.81-1.86-.9-.24-.09-.42-.12-.6.12-.18.24-.69.9-.84 1.08-.15.18-.3.21-.57.09-.27-.15-1.14-.42-2.16-1.35-.81-.72-1.35-1.59-1.5-1.86-.15-.27 0-.42.12-.57.12-.12.27-.33.39-.48.12-.15.18-.27.27-.45.09-.18.03-.33-.03-.48-.06-.15-.6-1.44-.84-1.98-.18-.42-.39-.42-.57-.42h-.09z"/>
+      </svg>
+    </a>
   );
 }

@@ -185,7 +185,7 @@ export default function QuoteForm() {
 
                 {/* Phone */}
                 <div>
-                  <label htmlFor="phone" style={labelStyle}>Phone / WhatsApp *</label>
+                  <label htmlFor="phone" style={labelStyle}>Phone / Viber *</label>
                   <input
                     id="phone"
                     name="phone"
@@ -193,7 +193,7 @@ export default function QuoteForm() {
                     required
                     value={form.phone}
                     onChange={handleChange}
-                    placeholder="+63 9XX XXX XXXX"
+                    placeholder="+63 9XX XXX XXXX (Viber preferred)"
                     style={inputStyle}
                     className="input-field"
                   />

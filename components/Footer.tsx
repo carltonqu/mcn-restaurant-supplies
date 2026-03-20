@@ -75,7 +75,7 @@ export default function Footer() {
                 </a>
               </div>
               <div>
-                <p style={{ fontSize: '0.8125rem', color: '#737373', marginBottom: '2px' }}>Phone</p>
+                <p style={{ fontSize: '0.8125rem', color: '#737373', marginBottom: '2px' }}>Viber</p>
                 <p style={{ fontSize: '0.875rem', color: '#a3a3a3' }}>+63 XXX XXX XXXX</p>
               </div>
               <div>
