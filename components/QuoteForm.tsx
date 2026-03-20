@@ -235,11 +235,9 @@ export default function QuoteForm() {
                     className="input-field"
                   >
                     <option value="" disabled>Select budget range</option>
-                    <option value="Under ₱50,000">Under ₱50,000</option>
-                    <option value="₱50,000 – ₱100,000">₱50,000 – ₱100,000</option>
-                    <option value="₱100,000 – ₱250,000">₱100,000 – ₱250,000</option>
-                    <option value="₱250,000 – ₱500,000">₱250,000 – ₱500,000</option>
-                    <option value="₱500,000+">₱500,000+</option>
+                    <option value="₱200,000 – ₱500,000">₱200,000 – ₱500,000</option>
+                    <option value="₱500,000 – ₱1,000,000">₱500,000 – ₱1,000,000</option>
+                    <option value="₱1,000,000+">₱1,000,000+</option>
                   </select>
                 </div>
               </div>
@@ -290,7 +288,7 @@ export default function QuoteForm() {
                     </div>
                   </div>
                   <span style={{ fontSize: '0.875rem', color: '#404040', lineHeight: 1.5 }}>
-                    I understand that minimum order requirements apply and will be discussed during the quote process. *
+                    I understand the <strong>minimum order is ₱200,000</strong>. Orders below this amount cannot be processed. *
                   </span>
                 </label>
               </div>
