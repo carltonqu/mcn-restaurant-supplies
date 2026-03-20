@@ -94,13 +94,13 @@ export async function POST(req: NextRequest) {
     // Send both emails concurrently
     await Promise.all([
       resend.emails.send({
-        from: "MCN Supplies <noreply@mcn-supplies.com>",
+        from: "MCN Supplies <onboarding@resend.dev>",
         to: [ADMIN_EMAIL],
         subject: `🆕 New Quote Request from ${fullName} - ${companyName}`,
         html: adminEmailHtml,
       }),
       resend.emails.send({
-        from: "MCN Restaurant Supplies <noreply@mcn-supplies.com>",
+        from: "MCN Restaurant Supplies <onboarding@resend.dev>",
         to: [email],
         subject: "✅ Your Quote Request Has Been Received — MCN Supplies",
         html: clientEmailHtml,
