@@ -1,6 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
+:root {
+  --bg-main: #ffffff;
+  --bg-dark: #0a0a0a;
+  --text-primary: #0a0a0a;
+  --text-light: #ffffff;
+  --gold: #C9A227;
+  --gold-light: #F5E6B2;
+  --gold-dark: #A07D1C;
+  --gold-tint: #FAFAF5;
+  --border: #e5e0d0;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,7 +25,41 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #0a0a0a;
-  color: #ffffff;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Marquee / Ticker animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Nav shadow on scroll - handled via JS class */
+.nav-scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Input focus gold border */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #C9A227 !important;
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.15);
 }
