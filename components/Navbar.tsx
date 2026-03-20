@@ -30,7 +30,7 @@ export default function Navbar() {
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
         {/* Logo */}
         <a href="#" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-          <img src="/mcn-logo.png" alt="MCN Logo" style={{ height: '44px', width: 'auto', objectFit: 'contain', filter: 'none' }} />
+          <img src="/mcn-logo.png" alt="MCN Logo" style={{ height: '44px', width: 'auto', objectFit: 'contain', filter: 'brightness(0)' }} />
         </a>
 
         {/* Center nav links */}
