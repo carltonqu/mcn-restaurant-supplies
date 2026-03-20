@@ -119,7 +119,7 @@ export default function Hero() {
                 ⭐ Factory Verified
               </p>
               <p style={{ fontSize: '0.8125rem', color: '#737373' }}>
-                500+ verified factory partners in China
+                100+ verified factory partners in China
               </p>
             </div>
           </div>

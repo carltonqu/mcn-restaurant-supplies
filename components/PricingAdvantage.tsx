@@ -122,7 +122,7 @@ export default function PricingAdvantage() {
             color: '#0D0D0D',
           }}>
             Average savings:{' '}
-            <span className="yellow-gradient-text">20%–50%</span>{' '}
+            <span className="yellow-gradient-text">30%–50%</span>{' '}
             depending on order volume
           </p>
         </div>

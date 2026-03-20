@@ -1,8 +1,8 @@
 const stats = [
-  { value: '500+', label: 'Products' },
-  { value: '50+', label: 'Factory Partners' },
+  { value: '1,000+', label: 'Products' },
+  { value: '100+', label: 'Factory Partners' },
   { value: '48hrs', label: 'Quote Time' },
-  { value: '20–50%', label: 'Avg Savings' },
+  { value: '30–50%', label: 'Avg Savings' },
 ];
 
 export default function TrustBar() {
