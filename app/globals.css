@@ -1,18 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --color-yellow: #F5C800;
+  --color-yellow-light: #FFF3B0;
+  --color-yellow-mid: #FFE566;
+  --color-yellow-dark: #D4A800;
+  --color-gray-50: #FAFAFA;
+  --color-gray-100: #F5F5F5;
+  --color-gray-200: #E5E5E5;
+  --color-gray-500: #737373;
+  --color-gray-700: #404040;
+  --color-black: #0D0D0D;
+}
+
 :root {
-  --bg-main: #ffffff;
-  --bg-dark: #0a0a0a;
-  --text-primary: #0a0a0a;
-  --text-light: #ffffff;
-  --gold: #C9A227;
-  --gold-light: #F5E6B2;
-  --gold-dark: #A07D1C;
-  --gold-tint: #FAFAF5;
-  --border: #e5e0d0;
-  --gold-gradient: linear-gradient(135deg, #F5D060 0%, #C9A227 50%, #A07D1C 100%);
-  --gold-gradient-hover: linear-gradient(135deg, #FFE080 0%, #D4A930 50%, #B08020 100%);
+  --yellow-gradient: linear-gradient(135deg, #FFE566 0%, #F5C800 60%, #D4A800 100%);
+  --yellow-gradient-hover: linear-gradient(135deg, #FFF080 0%, #FFD700 60%, #C9A800 100%);
 }
 
 * {
@@ -27,133 +31,149 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--bg-main);
-  color: var(--text-primary);
+  background: linear-gradient(to top, #FFF3B0 0%, #FFFDF5 40%, #ffffff 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #0D0D0D;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Marquee / Ticker animation */
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* Card equal height utility */
+.card-equal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.card-equal .card-body {
+  flex: 1;
 }
 
+/* Yellow gradient button */
+.btn-yellow {
+  background: var(--yellow-gradient);
+  color: #0D0D0D;
+  font-weight: 600;
+  border: none;
+  border-radius: 100px;
+  padding: 0.75rem 1.75rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 12px rgba(245, 200, 0, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1rem;
+  min-height: 44px;
+}
+.btn-yellow:hover {
+  background: var(--yellow-gradient-hover);
+  box-shadow: 0 4px 20px rgba(245, 200, 0, 0.45);
+  transform: translateY(-1px);
+}
+.btn-yellow:focus-visible {
+  outline: 3px solid #F5C800;
+  outline-offset: 2px;
+}
+
+.btn-outline-black {
+  background: transparent;
+  color: #0D0D0D;
+  font-weight: 600;
+  border: 2px solid #0D0D0D;
+  border-radius: 100px;
+  padding: 0.75rem 1.75rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1rem;
+  min-height: 44px;
+}
+.btn-outline-black:hover {
+  background: #0D0D0D;
+  color: #ffffff;
+}
+.btn-outline-black:focus-visible {
+  outline: 3px solid #0D0D0D;
+  outline-offset: 2px;
+}
+
+/* Section spacing */
+.section {
+  padding: 5rem 0;
+}
+.section-sm {
+  padding: 3rem 0;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 .marquee-track {
+  animation: marquee 20s linear infinite;
   display: flex;
   width: max-content;
-  animation: marquee 30s linear infinite;
 }
 
-.marquee-track:hover {
-  animation-play-state: paused;
+/* Card hover */
+.hover-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 16px;
+}
+.hover-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.1);
 }
 
-/* Nav shadow on scroll - handled via JS class */
-.nav-scrolled {
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Input focus gold border */
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-  border-color: #C9A227 !important;
-  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.15);
-}
-
-/* ── Gradient Gold Utilities ── */
-.gold-gradient-bg {
-  background: linear-gradient(135deg, #F5D060 0%, #C9A227 50%, #A07D1C 100%);
-}
-
-.gold-gradient-text {
-  background: linear-gradient(135deg, #F5D060 0%, #C9A227 50%, #A07D1C 100%);
+/* Yellow gradient text */
+.yellow-gradient-text {
+  background: var(--yellow-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.gold-gradient-border {
-  border: 2px solid transparent;
-  background-clip: padding-box;
-  position: relative;
+/* WhatsApp pulse */
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4), 0 4px 20px rgba(0,0,0,0.2); }
+  50% { box-shadow: 0 0 0 12px rgba(37,211,102,0), 0 4px 20px rgba(0,0,0,0.2); }
+}
+.whatsapp-pulse {
+  animation: pulse-green 2s infinite;
 }
 
-.gold-gradient-border::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  background: linear-gradient(135deg, #F5D060 0%, #C9A227 50%, #A07D1C 100%);
-  z-index: -1;
+/* Input focus styles */
+.input-field {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.9375rem;
+  color: #0D0D0D;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+}
+.input-field::placeholder {
+  color: #a3a3a3;
+}
+.input-field:focus {
+  border-color: #F5C800;
+  box-shadow: 0 0 0 3px rgba(245, 200, 0, 0.15);
 }
 
-/* ── Decorative Orbs ── */
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.15;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.orb-gold {
-  background: radial-gradient(circle, #F5D060, #C9A227);
-}
-
-.orb-dark {
-  background: radial-gradient(circle, #333, #000);
-}
-
-/* ── Image Gallery ── */
-.image-gallery-scroll {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  padding-bottom: 0.5rem;
-  scrollbar-width: thin;
-  scrollbar-color: #C9A227 transparent;
-}
-
-.image-gallery-scroll::-webkit-scrollbar {
-  height: 4px;
-}
-
-.image-gallery-scroll::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.image-gallery-scroll::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #F5D060 0%, #C9A227 50%, #A07D1C 100%);
-  border-radius: 2px;
-}
-
-.gallery-card {
-  flex-shrink: 0;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  border: 2px solid transparent;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-card:hover {
-  border-color: #C9A227;
-  box-shadow: 0 8px 32px rgba(201, 162, 39, 0.2);
-}
-
-/* ── Gold Gradient Button ── */
-.btn-gold {
-  background: linear-gradient(135deg, #F5D060 0%, #C9A227 50%, #A07D1C 100%);
-  transition: all 0.3s ease;
-}
-
-.btn-gold:hover {
-  background: linear-gradient(135deg, #FFE080 0%, #D4A930 50%, #B08020 100%);
+/* Navbar scroll shadow */
+.navbar-shadow {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
 }
