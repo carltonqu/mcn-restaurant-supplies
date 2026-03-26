@@ -101,21 +101,41 @@ export async function POST(req: NextRequest) {
       </div>
     `;
 
-    // Send both emails concurrently
-    await Promise.all([
-      resend.emails.send({
-        from: "MCN Supplies <onboarding@resend.dev>",
-        to: [ADMIN_EMAIL],
-        subject: `🆕 New Quote Request from ${fullName} - ${companyName}`,
-        html: adminEmailHtml,
-      }),
-      resend.emails.send({
-        from: "MCN Restaurant Supplies <onboarding@resend.dev>",
-        to: [email],
-        subject: "✅ Your Quote Request Has Been Received — MCN Supplies",
-        html: clientEmailHtml,
-      }),
-    ]);
+    const FROM_EMAIL = process.env.FROM_EMAIL || "MCN Supplies <onboarding@resend.dev>";
+
+    // Send admin and client emails separately so one failure doesn't block the other
+    const adminSend = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: [ADMIN_EMAIL],
+      subject: `🆕 New Quote Request from ${fullName} - ${companyName}`,
+      html: adminEmailHtml,
+      text: `New quote request\n\nName: ${fullName}\nCompany: ${companyName}\nEmail: ${email}\nPhone/Viber: ${phone}\nBusiness Type: ${businessType}\nBudget: ${budget}\n\nRequirements:\n${needs}`,
+      replyTo: email,
+    });
+
+    const clientSend = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: [email],
+      subject: "✅ Your Quote Request Has Been Received — MCN Supplies",
+      html: clientEmailHtml,
+      text: `Hi ${fullName},\n\nThanks for your quote request to MCN Restaurant Supplies.\n\nWe received your request for ${companyName}. Our team will review your requirements and send your detailed quotation within 24–48 hours.\n\nFor urgent inquiries, contact us on Viber: +63 966 976 5949\n\n— MCN Restaurant Supplies`,
+      replyTo: ADMIN_EMAIL,
+    });
+
+    if ((adminSend as any)?.error) {
+      console.error("Admin email send error:", (adminSend as any).error);
+    }
+
+    if ((clientSend as any)?.error) {
+      console.error("Client email send error:", (clientSend as any).error);
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Quote saved, but client confirmation email failed to send. Please verify sender domain and recipient inbox/spam.",
+        },
+        { status: 502 }
+      );
+    }
 
     return NextResponse.json({ success: true, message: "Quote request submitted successfully" });
   } catch (error) {
