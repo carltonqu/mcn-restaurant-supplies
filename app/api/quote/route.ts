@@ -126,18 +126,22 @@ export async function POST(req: NextRequest) {
       console.error("Admin email send error:", (adminSend as any).error);
     }
 
-    if ((clientSend as any)?.error) {
+    const clientEmailFailed = Boolean((clientSend as any)?.error);
+
+    if (clientEmailFailed) {
       console.error("Client email send error:", (clientSend as any).error);
-      return NextResponse.json(
-        {
-          success: false,
-          message: "Quote saved, but client confirmation email failed to send. Please verify sender domain and recipient inbox/spam.",
-        },
-        { status: 502 }
-      );
     }
 
-    return NextResponse.json({ success: true, message: "Quote request submitted successfully" });
+    return NextResponse.json({
+      success: true,
+      message: clientEmailFailed
+        ? "Quote submitted successfully. We received your request and will contact you soon."
+        : "Quote request submitted successfully",
+      emailStatus: {
+        adminDelivered: !Boolean((adminSend as any)?.error),
+        clientDelivered: !clientEmailFailed,
+      },
+    });
   } catch (error) {
     console.error("Quote API error:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
