@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
     }
 
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
-    const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "admin@mcn-supplies.com";
+    const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "carltonqu@gmail.com";
 
     if (!RESEND_API_KEY) {
       // Log form data but don't crash
