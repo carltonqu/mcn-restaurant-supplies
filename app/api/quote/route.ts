@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-interface QuoteFormData {
+interface LegacyQuoteFormData {
   fullName: string;
   companyName: string;
   email: string;
@@ -11,23 +11,35 @@ interface QuoteFormData {
   minimumOrderAck: boolean;
 }
 
+interface QuotationFormData {
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  productOrService: string;
+  quantity: string;
+  message: string;
+}
+
 export async function POST(req: NextRequest) {
   try {
-    const body: QuoteFormData = await req.json();
+    const body = (await req.json()) as Partial<LegacyQuoteFormData & QuotationFormData>;
 
-    const {
-      fullName,
-      companyName,
-      email,
-      phone,
-      businessType,
-      needs,
-      budget,
-      minimumOrderAck,
-    } = body;
+    const isLegacyPayload = Boolean(body.fullName || body.companyName || body.businessType || body.budget || body.minimumOrderAck !== undefined);
 
-    // Validate required fields
-    if (!fullName || !companyName || !email || !phone || !businessType || !needs || !budget || !minimumOrderAck) {
+    const fullName = isLegacyPayload ? body.fullName : body.name;
+    const companyName = isLegacyPayload ? body.companyName : body.company;
+    const email = body.email;
+    const phone = body.phone;
+    const businessType = isLegacyPayload ? body.businessType : "Quotation Request";
+    const budget = isLegacyPayload ? body.budget : "Not provided";
+    const minimumOrderAck = isLegacyPayload ? body.minimumOrderAck : true;
+    const needs = isLegacyPayload
+      ? body.needs
+      : `Product/Service: ${body.productOrService || "N/A"}\nQuantity: ${body.quantity || "N/A"}\nMessage: ${body.message || "N/A"}`;
+
+    // Validate required fields for both payload types
+    if (!fullName || !companyName || !email || !phone || !needs || !minimumOrderAck) {
       return NextResponse.json({ error: "All fields are required" }, { status: 400 });
     }
 

@@ -44,11 +44,17 @@ export default function Footer() {
               Company
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
-              {['About Us', 'How It Works', 'Why Choose Us', 'Pricing', 'Get a Quote'].map(link => (
-                <a key={link} href="#" style={{ fontSize: '0.875rem', color: '#737373', textDecoration: 'none', transition: 'color 0.2s' }}
+              {[
+                { label: 'About Us', href: '#home' },
+                { label: 'How It Works', href: '#how-it-works' },
+                { label: 'Why Choose Us', href: '#why-us' },
+                { label: 'Pricing', href: '#pricing' },
+                { label: 'Get a Quote', href: '/quotation' },
+              ].map(link => (
+                <a key={link.label} href={link.href} style={{ fontSize: '0.875rem', color: '#737373', textDecoration: 'none', transition: 'color 0.2s' }}
                   onMouseEnter={e => (e.currentTarget.style.color = '#ffffff')}
                   onMouseLeave={e => (e.currentTarget.style.color = '#737373')}>
-                  {link}
+                  {link.label}
                 </a>
               ))}
             </div>

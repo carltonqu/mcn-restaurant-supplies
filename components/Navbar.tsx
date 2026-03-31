@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -29,16 +30,22 @@ export default function Navbar() {
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
         {/* Logo */}
-        <a href="#" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+        <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
           <img src="/mcn-logo.png" alt="MCN Logo" style={{ height: '44px', width: 'auto', objectFit: 'contain', filter: 'brightness(0)' }} />
-        </a>
+        </Link>
 
         {/* Center nav links */}
         <div className="hidden md:flex" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-          {['Home', 'Products', 'Why Us', 'Pricing', 'How It Works'].map((link) => (
+          {[
+            { label: 'Home', href: '#home' },
+            { label: 'Products', href: '#products' },
+            { label: 'Why Us', href: '#why-us' },
+            { label: 'Pricing', href: '#pricing' },
+            { label: 'How It Works', href: '#how-it-works' },
+          ].map((link) => (
             <a
-              key={link}
-              href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
+              key={link.label}
+              href={link.href}
               style={{
                 color: '#404040', fontSize: '0.875rem', textDecoration: 'none',
                 fontWeight: 500, transition: 'color 0.2s',
@@ -46,19 +53,30 @@ export default function Navbar() {
               onMouseEnter={e => (e.currentTarget.style.color = '#0D0D0D')}
               onMouseLeave={e => (e.currentTarget.style.color = '#404040')}
             >
-              {link}
+              {link.label}
             </a>
           ))}
+          <Link
+            href="/quotation"
+            style={{
+              color: '#404040', fontSize: '0.875rem', textDecoration: 'none',
+              fontWeight: 500, transition: 'color 0.2s',
+            }}
+            onMouseEnter={e => (e.currentTarget.style.color = '#0D0D0D')}
+            onMouseLeave={e => (e.currentTarget.style.color = '#404040')}
+          >
+            Quotation
+          </Link>
         </div>
 
         {/* CTA button */}
-        <a
-          href="#quote"
+        <Link
+          href="/quotation"
           className="btn-yellow"
           style={{ fontSize: '0.875rem', padding: '0.5rem 1.25rem', borderRadius: '100px' }}
         >
           Get Free Quote
-        </a>
+        </Link>
       </div>
     </nav>
   );
