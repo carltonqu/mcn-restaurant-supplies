@@ -1,11 +1,11 @@
 import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import PricingAdvantage from '@/components/PricingAdvantage';
 import TrustBar from '@/components/TrustBar';
 import Marquee from '@/components/Marquee';
 import WhatWeOffer from '@/components/WhatWeOffer';
 import WhyChooseUs from '@/components/WhyChooseUs';
-import PricingAdvantage from '@/components/PricingAdvantage';
 import HowItWorks from '@/components/HowItWorks';
 import QuoteForm from '@/components/QuoteForm';
 import Footer from '@/components/Footer';
@@ -18,11 +18,11 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <PricingAdvantage />
         <TrustBar />
         <Marquee />
         <WhatWeOffer />
         <WhyChooseUs />
-        <PricingAdvantage />
         <HowItWorks />
         <QuoteForm />
       </main>

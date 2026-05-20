@@ -2,6 +2,7 @@ import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import FloatingContactButton from '@/components/FloatingContactButton';
 import ProductCategory from '@/components/ProductCategory';
 import CategoryNav from '@/components/CategoryNav';
 
@@ -156,6 +157,7 @@ export default function ProductsPage() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <FloatingContactButton />
 
       <style>{`
         .btn-outline-white {
