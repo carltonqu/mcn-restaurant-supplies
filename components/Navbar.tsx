@@ -37,11 +37,11 @@ export default function Navbar() {
         {/* Center nav links */}
         <div className="hidden md:flex" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
           {[
-            { label: 'Home', href: '#home' },
-            { label: 'Products', href: '#products' },
-            { label: 'Why Us', href: '#why-us' },
-            { label: 'Pricing', href: '#pricing' },
-            { label: 'How It Works', href: '#how-it-works' },
+            { label: 'Home', href: '/' },
+            { label: 'Products', href: '/products' },
+            { label: 'Why Us', href: '/#why-us' },
+            { label: 'Pricing', href: '/#pricing' },
+            { label: 'How It Works', href: '/#how-it-works' },
           ].map((link) => (
             <a
               key={link.label}

@@ -55,7 +55,7 @@ export default function Hero() {
               <a href="#quote" className="btn-yellow" style={{ fontSize: '1rem', padding: '0.875rem 2rem' }}>
                 Get a Free Quote →
               </a>
-              <a href="#products" className="btn-outline-black" style={{ fontSize: '1rem', padding: '0.875rem 2rem' }}>
+              <a href="/products" className="btn-outline-black" style={{ fontSize: '1rem', padding: '0.875rem 2rem' }}>
                 View Products
               </a>
             </div>
