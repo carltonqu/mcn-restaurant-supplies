@@ -3,19 +3,19 @@ import { ChefHat, Utensils, Package, ShoppingBasket, Settings } from 'lucide-rea
 
 const mainCards = [
   {
-    img: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=500&h=375&fit=crop',
+    img: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&h=375&fit=crop',
     icon: ChefHat,
     title: 'Kitchen Equipment',
     desc: 'Commercial-grade fryers, grills, ranges, and ovens sourced directly from verified factories in China. Restaurant-ready quality at factory prices.',
   },
   {
-    img: 'https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=500&h=375&fit=crop',
+    img: 'https://images.unsplash.com/photo-1584646886685-2f651f11b5c4?w=500&h=375&fit=crop',
     icon: Utensils,
     title: 'Utensils & Tools',
     desc: 'Professional cookware, stainless steel tools, storage containers, and prep equipment for every kitchen need.',
   },
   {
-    img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=500&h=375&fit=crop',
+    img: 'https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=500&h=375&fit=crop',
     icon: Package,
     title: 'Storage & Shelving',
     desc: 'Stainless work tables, commercial freezers, refrigeration units, and industrial shelving for organized, efficient kitchens.',

@@ -1,24 +1,24 @@
 export default function ImageGallery() {
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&h=280&fit=crop",
-      alt: "Commercial fryer station",
+      src: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&h=280&fit=crop",
+      alt: "Commercial deep fryer",
     },
     {
-      src: "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=400&h=280&fit=crop",
-      alt: "Stainless steel work tables",
+      src: "https://images.unsplash.com/photo-1584646886685-2f651f11b5c4?w=400&h=280&fit=crop",
+      alt: "Stainless steel kitchen tools",
     },
     {
-      src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=280&fit=crop",
-      alt: "Commercial refrigeration",
+      src: "https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=400&h=280&fit=crop",
+      alt: "Commercial refrigerator",
     },
     {
-      src: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=280&fit=crop",
-      alt: "Professional kitchen setup",
+      src: "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?w=400&h=280&fit=crop",
+      alt: "Commercial kitchen equipment",
     },
     {
-      src: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=280&fit=crop",
-      alt: "Commercial cooking range",
+      src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=280&fit=crop",
+      alt: "Stainless steel cookware",
     },
   ];
 

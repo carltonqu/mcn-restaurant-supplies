@@ -93,7 +93,7 @@ export default function Hero() {
             overflow: 'hidden',
           }}>
             <Image
-              src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800&h=600&fit=crop"
+              src="https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?w=800&h=600&fit=crop"
               alt="Restaurant kitchen equipment"
               fill
               style={{ objectFit: 'cover' }}
