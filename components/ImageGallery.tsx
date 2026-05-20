@@ -1,20 +1,20 @@
 export default function ImageGallery() {
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&h=280&fit=crop",
-      alt: "Commercial deep fryer",
+      src: "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?w=400&h=280&fit=crop",
+      alt: "Commercial kitchen equipment",
     },
     {
-      src: "https://images.unsplash.com/photo-1584646886685-2f651f11b5c4?w=400&h=280&fit=crop",
-      alt: "Stainless steel kitchen tools",
+      src: "https://images.unsplash.com/photo-1585671964206-4c6491aa3429?w=400&h=280&fit=crop",
+      alt: "Cutlery set",
     },
     {
-      src: "https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=400&h=280&fit=crop",
+      src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=280&fit=crop",
       alt: "Commercial refrigerator",
     },
     {
-      src: "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?w=400&h=280&fit=crop",
-      alt: "Commercial kitchen equipment",
+      src: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&h=280&fit=crop",
+      alt: "Commercial deep fryer",
     },
     {
       src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=280&fit=crop",
