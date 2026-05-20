@@ -29,22 +29,28 @@ export default function QuoteForm() {
     setStatus('loading');
     setErrorMsg('');
     try {
-      const res = await fetch('/api/quote', {
+      const res = await fetch('https://formspree.io/f/xnqevjdr', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          ...form,
+          _subject: `New Quote Request from ${form.fullName} - ${form.companyName}`,
+        }),
       });
-      const data = await res.json();
-      if (res.ok && data.success) {
+      
+      if (res.ok) {
         setStatus('success');
         setForm({ fullName: '', companyName: '', email: '', phone: '', businessType: '', needs: '', budget: '', minimumOrderAck: false });
       } else {
         setStatus('error');
-        setErrorMsg(data.error || 'Something went wrong. Please try again.');
+        setErrorMsg('Something went wrong. Please try again or contact us via WhatsApp.');
       }
     } catch {
       setStatus('error');
-      setErrorMsg('Network error. Please try again.');
+      setErrorMsg('Network error. Please try again or contact us via WhatsApp.');
     }
   };
 
@@ -115,7 +121,7 @@ export default function QuoteForm() {
                 Quote Request Received!
               </h3>
               <p style={{ color: '#737373', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto' }}>
-                We'll review your requirements and send you a detailed quote within 24–48 hours.
+                We&apos;ll review your requirements and send you a detailed quote within 24–48 hours.
               </p>
               <button
                 onClick={() => setStatus('idle')}
@@ -330,6 +336,13 @@ export default function QuoteForm() {
               >
                 {status === 'loading' ? 'Submitting...' : 'Request My Free Quote →'}
               </button>
+
+              <p style={{ textAlign: 'center', marginTop: '1rem', fontSize: '0.8125rem', color: '#737373' }}>
+                Or message us directly on{' '}
+                <a href="https://wa.me/639669765949" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', fontWeight: 600 }}>
+                  WhatsApp
+                </a>
+              </p>
             </form>
           )}
         </div>

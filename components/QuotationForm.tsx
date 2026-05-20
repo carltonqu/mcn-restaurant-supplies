@@ -38,23 +38,29 @@ export default function QuotationForm() {
     setError('');
 
     try {
-      const res = await fetch('/api/quote', {
+      // Using Formspree for form submission
+      const res = await fetch('https://formspree.io/f/xnqevjdr', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          ...form,
+          _subject: `New Quotation Request from ${form.name} - ${form.company}`,
+        }),
       });
 
-      const data = await res.json();
-      if (res.ok && data.success) {
+      if (res.ok) {
         setStatus('success');
         setForm(initialState);
       } else {
         setStatus('error');
-        setError(data.error || 'Unable to submit quotation request. Please try again.');
+        setError('Unable to submit quotation request. Please try again or contact us via WhatsApp.');
       }
     } catch {
       setStatus('error');
-      setError('Network error. Please try again.');
+      setError('Network error. Please try again or contact us via WhatsApp.');
     }
   };
 
@@ -180,6 +186,13 @@ export default function QuotationForm() {
               <button type="submit" disabled={status === 'loading'} className="btn-yellow" style={{ width: '100%', height: '52px', borderRadius: '12px', fontWeight: 700 }}>
                 {status === 'loading' ? 'Submitting...' : 'Request Quotation'}
               </button>
+
+              <p style={{ textAlign: 'center', marginTop: '1rem', fontSize: '0.8125rem', color: '#737373' }}>
+                Or message us directly on{' '}
+                <a href="https://wa.me/639669765949" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', fontWeight: 600 }}>
+                  WhatsApp
+                </a>
+              </p>
             </form>
           )}
         </div>
