@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { ChefHat, Utensils, Package, ShoppingBasket, Settings } from 'lucide-react';
 
 const mainCards = [
@@ -7,18 +8,21 @@ const mainCards = [
     icon: ChefHat,
     title: 'Kitchen Equipment',
     desc: 'Commercial-grade fryers, grills, ranges, and ovens sourced directly from verified factories in China. Restaurant-ready quality at factory prices.',
+    link: '/products#cooking',
   },
   {
     img: 'https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=500&h=375&fit=crop',
     icon: Utensils,
     title: 'Utensils & Tools',
     desc: 'Professional cookware, stainless steel tools, storage containers, and prep equipment for every kitchen need.',
+    link: '/products#prep',
   },
   {
     img: 'https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=500&h=375&fit=crop',
     icon: Package,
     title: 'Storage & Shelving',
     desc: 'Stainless work tables, commercial freezers, refrigeration units, and industrial shelving for organized, efficient kitchens.',
+    link: '/products#refrigeration',
   },
 ];
 
@@ -27,11 +31,13 @@ const featureCards = [
     icon: ShoppingBasket,
     title: 'Ingredients Sourcing',
     desc: 'Bulk food-grade packaging, dry ingredients, and consumables sourced at wholesale China prices for Philippine food businesses.',
+    link: '/products#packaging',
   },
   {
     icon: Settings,
     title: 'Custom Bulk Orders',
     desc: 'Need something specific? We work with our factory partners to fulfill custom orders, branded equipment, and bulk configurations.',
+    link: '/products',
   },
 ];
 
@@ -79,8 +85,9 @@ export default function WhatWeOffer() {
           {mainCards.map((card) => {
             const Icon = card.icon;
             return (
-              <div
+              <Link
                 key={card.title}
+                href={card.link}
                 className="hover-card card-equal"
                 style={{
                   backgroundColor: '#ffffff',
@@ -88,6 +95,8 @@ export default function WhatWeOffer() {
                   borderRadius: '16px',
                   padding: '28px',
                   cursor: 'pointer',
+                  textDecoration: 'none',
+                  display: 'block',
                 }}
               >
                 {/* Image */}
@@ -129,16 +138,15 @@ export default function WhatWeOffer() {
                 </div>
 
                 {/* Bottom link */}
-                <a
-                  href="#quote"
+                <span
                   style={{
                     color: '#D4A800', fontSize: '0.875rem', fontWeight: 600,
                     textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px',
                   }}
                 >
-                  Learn more →
-                </a>
-              </div>
+                  View products →
+                </span>
+              </Link>
             );
           })}
         </div>
@@ -155,8 +163,9 @@ export default function WhatWeOffer() {
           {featureCards.map((card) => {
             const Icon = card.icon;
             return (
-              <div
+              <Link
                 key={card.title}
+                href={card.link}
                 className="hover-card card-equal"
                 style={{
                   backgroundColor: '#ffffff',
@@ -166,6 +175,7 @@ export default function WhatWeOffer() {
                   display: 'flex',
                   alignItems: 'flex-start',
                   gap: '1rem',
+                  textDecoration: 'none',
                 }}
               >
                 <div style={{
@@ -184,7 +194,7 @@ export default function WhatWeOffer() {
                     {card.desc}
                   </p>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>
