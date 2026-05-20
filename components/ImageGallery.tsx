@@ -1,24 +1,24 @@
 export default function ImageGallery() {
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?w=400&h=280&fit=crop",
-      alt: "Commercial kitchen equipment",
+      src: "https://images.unsplash.com/photo-1567521464027-f127ff144326?w=400&h=280&fit=crop",
+      alt: "Commercial oven",
     },
     {
-      src: "https://images.unsplash.com/photo-1585671964206-4c6491aa3429?w=400&h=280&fit=crop",
-      alt: "Cutlery set",
+      src: "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400&h=280&fit=crop",
+      alt: "Kitchen range",
     },
     {
-      src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=280&fit=crop",
-      alt: "Commercial refrigerator",
+      src: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=280&fit=crop",
+      alt: "Stainless equipment",
     },
     {
-      src: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&h=280&fit=crop",
-      alt: "Commercial deep fryer",
+      src: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=280&fit=crop",
+      alt: "Kitchen appliances",
     },
     {
-      src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=280&fit=crop",
-      alt: "Stainless steel cookware",
+      src: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400&h=280&fit=crop",
+      alt: "Food equipment",
     },
   ];
 

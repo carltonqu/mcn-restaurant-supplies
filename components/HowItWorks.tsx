@@ -27,7 +27,7 @@ export default function HowItWorks() {
       {/* Background texture */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?w=1920&h=600&fit=crop"
+        src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=1920&h=600&fit=crop"
         alt=""
         aria-hidden
         style={{

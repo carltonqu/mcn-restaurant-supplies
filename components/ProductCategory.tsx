@@ -21,10 +21,10 @@ interface CategoryProps {
 }
 
 const categoryImages: Record<string, string> = {
-  refrigeration: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop',
-  cooking: 'https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?w=600&h=400&fit=crop',
-  prep: 'https://images.unsplash.com/photo-1585671964206-4c6491aa3429?w=600&h=400&fit=crop',
-  signage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop',
+  refrigeration: 'https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=600&h=400&fit=crop',
+  cooking: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=400&fit=crop',
+  prep: 'https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=600&h=400&fit=crop',
+  signage: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop',
   packaging: 'https://images.unsplash.com/photo-1607082349566-187342175e2f?w=600&h=400&fit=crop',
   uniforms: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&h=400&fit=crop',
 };
