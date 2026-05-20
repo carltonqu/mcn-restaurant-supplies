@@ -1,20 +1,20 @@
 const rows = [
   {
-    img: 'https://images.unsplash.com/photo-1567521464027-f127ff144326?w=80&h=80&fit=crop',
+    img: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=80&h=80&fit=crop',
     item: 'Commercial Fryer',
     ph: '₱25,000',
     mcn: '₱15,000',
     save: '₱10,000 (40%)',
   },
   {
-    img: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=80&h=80&fit=crop',
+    img: 'https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=80&h=80&fit=crop',
     item: 'Stainless Work Table',
     ph: '₱18,000',
     mcn: '₱11,000',
     save: '₱7,000 (39%)',
   },
   {
-    img: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=80&h=80&fit=crop',
+    img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=80&h=80&fit=crop',
     item: 'Rice Cooker (Commercial)',
     ph: '₱8,000',
     mcn: '₱4,500',

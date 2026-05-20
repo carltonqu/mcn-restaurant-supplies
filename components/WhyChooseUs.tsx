@@ -117,7 +117,7 @@ export default function WhyChooseUs() {
               height: '160px',
             }}>
               <Image
-                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=200&fit=crop"
+                src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=200&fit=crop"
                 alt="Kitchen equipment"
                 fill
                 style={{ objectFit: 'cover' }}

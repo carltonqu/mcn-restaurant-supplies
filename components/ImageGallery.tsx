@@ -1,24 +1,24 @@
 export default function ImageGallery() {
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400&h=280&fit=crop",
-      alt: "Commercial oven",
+      src: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&h=280&fit=crop",
+      alt: "Commercial fryer station",
     },
     {
-      src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=280&fit=crop",
-      alt: "Kitchen equipment",
+      src: "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=400&h=280&fit=crop",
+      alt: "Stainless steel work tables",
     },
     {
-      src: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=280&fit=crop",
-      alt: "Food display",
+      src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=280&fit=crop",
+      alt: "Commercial refrigeration",
     },
     {
-      src: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400&h=280&fit=crop",
-      alt: "Restaurant supplies",
+      src: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=280&fit=crop",
+      alt: "Professional kitchen setup",
     },
     {
-      src: "https://images.unsplash.com/photo-1567521464027-f127ff144326?w=400&h=280&fit=crop",
-      alt: "Kitchen setup",
+      src: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=280&fit=crop",
+      alt: "Commercial cooking range",
     },
   ];
 
