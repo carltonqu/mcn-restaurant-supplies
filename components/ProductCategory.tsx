@@ -20,13 +20,31 @@ interface CategoryProps {
   isEven: boolean;
 }
 
-const categoryImages: Record<string, string> = {
-  refrigeration: 'https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=600&h=400&fit=crop',
-  cooking: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=400&fit=crop',
-  prep: 'https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=600&h=400&fit=crop',
-  signage: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop',
-  packaging: 'https://images.unsplash.com/photo-1607082349566-187342175e2f?w=600&h=400&fit=crop',
-  uniforms: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&h=400&fit=crop',
+// Product-specific images matching each product name
+const productImages: Record<string, string> = {
+  // Refrigeration
+  'Double Door Upright Chiller': 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&h=400&fit=crop',
+  'Chest Freezer': 'https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=600&h=400&fit=crop',
+  // Cooking
+  'Commercial Gas Fryer': 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=400&fit=crop',
+  'Commercial Range / Stove': 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop',
+  'Exhaust Hood System': 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop',
+  'Ice Machine': 'https://images.unsplash.com/photo-1565626424178-c699f6601afd?w=600&h=400&fit=crop',
+  'Convection Oven': 'https://images.unsplash.com/photo-1584269600519-112d071b35e6?w=600&h=400&fit=crop',
+  // Prep & Storage
+  'Stainless Prep Table': 'https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=600&h=400&fit=crop',
+  'Sink Station': 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop',
+  'Spiral Dough Mixer': 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=400&fit=crop',
+  // Signage
+  'LED Acrylic Signage': 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop',
+  'Digital Menu Board': 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
+  'Acrylic Table Displays': 'https://images.unsplash.com/photo-1607082349566-187342175e2f?w=600&h=400&fit=crop',
+  'Menu Holders': 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop',
+  // Packaging
+  'Custom Food Packaging': 'https://images.unsplash.com/photo-1607082349566-187342175e2f?w=600&h=400&fit=crop',
+  // Uniforms
+  'Staff Uniforms': 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&h=400&fit=crop',
+  'Aprons': 'https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=600&h=400&fit=crop',
 };
 
 export default function ProductCategory({ category, isEven }: CategoryProps) {
@@ -122,11 +140,9 @@ function ProductCard({
 }) {
   const [showInquiry, setShowInquiry] = useState(false);
 
-  // Generate a unique image URL based on product name
+  // Get product-specific image based on product name
   const getProductImage = () => {
-    const baseImage = categoryImages[categoryId] || categoryImages.cooking;
-    // Add a unique parameter to get different images for products in same category
-    return `${baseImage}&product=${index}`;
+    return productImages[product.name] || 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop';
   };
 
   return (
