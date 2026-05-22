@@ -20,21 +20,21 @@ interface CategoryProps {
   isEven: boolean;
 }
 
-// Product-specific images matching each product name
+// Product-specific images - professional kitchen equipment, no people
 const productImages: Record<string, string> = {
   // Refrigeration
   'Double Door Upright Chiller': 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&h=400&fit=crop',
   'Chest Freezer': 'https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=600&h=400&fit=crop',
   // Cooking
-  'Commercial Gas Fryer': 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=400&fit=crop',
-  'Commercial Range / Stove': 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop',
-  'Exhaust Hood System': 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop',
+  'Commercial Gas Fryer': 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&h=400&fit=crop',
+  'Commercial Range / Stove': 'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=600&h=400&fit=crop',
+  'Exhaust Hood System': 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop',
   'Ice Machine': 'https://images.unsplash.com/photo-1565626424178-c699f6601afd?w=600&h=400&fit=crop',
   'Convection Oven': 'https://images.unsplash.com/photo-1584269600519-112d071b35e6?w=600&h=400&fit=crop',
   // Prep & Storage
   'Stainless Prep Table': 'https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=600&h=400&fit=crop',
   'Sink Station': 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop',
-  'Spiral Dough Mixer': 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=400&fit=crop',
+  'Spiral Dough Mixer': 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=400&fit=crop',
   // Signage
   'LED Acrylic Signage': 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop',
   'Digital Menu Board': 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
@@ -43,7 +43,7 @@ const productImages: Record<string, string> = {
   // Packaging
   'Custom Food Packaging': 'https://images.unsplash.com/photo-1607082349566-187342175e2f?w=600&h=400&fit=crop',
   // Uniforms
-  'Staff Uniforms': 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&h=400&fit=crop',
+  'Staff Uniforms': 'https://images.unsplash.com/photo-1589820296156-2454bb8a6d54?w=600&h=400&fit=crop',
   'Aprons': 'https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=600&h=400&fit=crop',
 };
 
