@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const rows = [
   {
-    img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=80&h=80&fit=crop',
+    img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=80&h=80&fit=crop',
     item: 'Commercial Fryer',
     ph: '₱25,000',
     mcn: '₱15,000',
