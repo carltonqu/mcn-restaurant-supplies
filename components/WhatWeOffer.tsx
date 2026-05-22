@@ -4,7 +4,7 @@ import { ChefHat, Utensils, Package, ShoppingBasket, Settings } from 'lucide-rea
 
 const mainCards = [
   {
-    img: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&h=375&fit=crop',
+    img: 'https://images.unsplash.com/photo-1594385208974-2e75f8d7bb48?w=500&h=375&fit=crop',
     icon: ChefHat,
     title: 'Kitchen Equipment',
     desc: 'Commercial-grade fryers, grills, ranges, and ovens sourced directly from verified factories in China. Restaurant-ready quality at factory prices.',
