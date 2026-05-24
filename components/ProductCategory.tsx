@@ -20,31 +20,31 @@ interface CategoryProps {
   isEven: boolean;
 }
 
-// Product-specific images - professional kitchen equipment, no people
+// Product-specific images - AI-generated professional product photos
 const productImages: Record<string, string> = {
   // Refrigeration
-  'Double Door Upright Chiller': 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&h=400&fit=crop',
-  'Chest Freezer': 'https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=600&h=400&fit=crop',
+  'Double Door Upright Chiller': '/images/double-door-chiller.jpg',
+  'Chest Freezer': '/images/chest-freezer.jpg',
   // Cooking
-  'Commercial Gas Fryer': 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&h=400&fit=crop',
-  'Commercial Range / Stove': 'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=600&h=400&fit=crop',
-  'Exhaust Hood System': 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop',
-  'Ice Machine': 'https://images.unsplash.com/photo-1565626424178-c699f6601afd?w=600&h=400&fit=crop',
-  'Convection Oven': 'https://images.unsplash.com/photo-1584269600519-112d071b35e6?w=600&h=400&fit=crop',
+  'Commercial Gas Fryer': '/images/gas-fryer.jpg',
+  'Commercial Range / Stove': '/images/commercial-range.jpg',
+  'Exhaust Hood System': '/images/exhaust-hood.jpg',
+  'Ice Machine': '/images/ice-machine.jpg',
+  'Convection Oven': '/images/convection-oven.jpg',
   // Prep & Storage
-  'Stainless Prep Table': 'https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=600&h=400&fit=crop',
-  'Sink Station': 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop',
-  'Spiral Dough Mixer': 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=400&fit=crop',
+  'Stainless Prep Table': '/images/prep-table.jpg',
+  'Sink Station': '/images/sink-station.jpg',
+  'Spiral Dough Mixer': '/images/dough-mixer.jpg',
   // Signage
-  'LED Acrylic Signage': 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop',
-  'Digital Menu Board': 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
-  'Acrylic Table Displays': 'https://images.unsplash.com/photo-1607082349566-187342175e2f?w=600&h=400&fit=crop',
-  'Menu Holders': 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop',
+  'LED Acrylic Signage': '/images/led-signage.jpg',
+  'Digital Menu Board': '/images/digital-menu-board.jpg',
+  'Acrylic Table Displays': '/images/acrylic-displays.jpg',
+  'Menu Holders': '/images/menu-holders.jpg',
   // Packaging
-  'Custom Food Packaging': 'https://images.unsplash.com/photo-1607082349566-187342175e2f?w=600&h=400&fit=crop',
+  'Custom Food Packaging': '/images/food-packaging.jpg',
   // Uniforms
-  'Staff Uniforms': 'https://images.unsplash.com/photo-1589820296156-2454bb8a6d54?w=600&h=400&fit=crop',
-  'Aprons': 'https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=600&h=400&fit=crop',
+  'Staff Uniforms': '/images/staff-uniforms.jpg',
+  'Aprons': '/images/aprons.jpg',
 };
 
 export default function ProductCategory({ category, isEven }: CategoryProps) {
