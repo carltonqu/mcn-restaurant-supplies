@@ -93,8 +93,8 @@ export default function Hero() {
             overflow: 'hidden',
           }}>
             <Image
-              src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=800&h=600&fit=crop"
-              alt="Commercial refrigerator - stainless steel double door fridge"
+              src="/images/factory-verified.jpg"
+              alt="Verified factory partners in China manufacturing commercial kitchen equipment"
               fill
               style={{ objectFit: 'cover' }}
               priority
