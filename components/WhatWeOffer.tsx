@@ -11,14 +11,14 @@ const mainCards = [
     link: '/products#cooking',
   },
   {
-    img: 'https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=500&h=375&fit=crop',
+    img: '/images/utensils-tools.jpg',
     icon: Utensils,
     title: 'Utensils & Tools',
     desc: 'Professional cookware, stainless steel tools, storage containers, and prep equipment for every kitchen need.',
     link: '/products#prep',
   },
   {
-    img: 'https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=500&h=375&fit=crop',
+    img: '/images/storage-shelving.jpg',
     icon: Package,
     title: 'Storage & Shelving',
     desc: 'Stainless work tables, commercial freezers, refrigeration units, and industrial shelving for organized, efficient kitchens.',
