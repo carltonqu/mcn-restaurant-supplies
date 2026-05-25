@@ -56,11 +56,11 @@ export default function QuotationForm() {
         setForm(initialState);
       } else {
         setStatus('error');
-        setError('Unable to submit quotation request. Please try again or contact us via WhatsApp.');
+        setError('Unable to submit quotation request. Please try again or contact us via Viber.');
       }
     } catch {
       setStatus('error');
-      setError('Network error. Please try again or contact us via WhatsApp.');
+      setError('Network error. Please try again or contact us via Viber.');
     }
   };
 

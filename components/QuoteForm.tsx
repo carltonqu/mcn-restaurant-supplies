@@ -46,11 +46,11 @@ export default function QuoteForm() {
         setForm({ fullName: '', companyName: '', email: '', phone: '', businessType: '', needs: '', budget: '', minimumOrderAck: false });
       } else {
         setStatus('error');
-        setErrorMsg('Something went wrong. Please try again or contact us via WhatsApp.');
+        setErrorMsg('Something went wrong. Please try again or contact us via Viber.');
       }
     } catch {
       setStatus('error');
-      setErrorMsg('Network error. Please try again or contact us via WhatsApp.');
+      setErrorMsg('Network error. Please try again or contact us via Viber.');
     }
   };
 
@@ -339,8 +339,8 @@ export default function QuoteForm() {
 
               <p style={{ textAlign: 'center', marginTop: '1rem', fontSize: '0.8125rem', color: '#737373' }}>
                 Or message us directly on{' '}
-                <a href="https://wa.me/639669765949" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', fontWeight: 600 }}>
-                  WhatsApp
+                <a href="viber://chat?number=%2B639669765949" style={{ color: '#7360F2', fontWeight: 600 }}>
+                  Viber
                 </a>
               </p>
             </form>

@@ -147,8 +147,8 @@ export default function ProductsPage() {
               <a href="/quotation" className="btn-yellow" style={{ fontSize: '1rem', padding: '0.875rem 2rem' }}>
                 Request Quotation →
               </a>
-              <a href="https://wa.me/639123456789" target="_blank" rel="noopener noreferrer" className="btn-outline-white" style={{ fontSize: '1rem', padding: '0.875rem 2rem' }}>
-                Chat on WhatsApp
+              <a href="viber://chat?number=%2B639669765949" className="btn-outline-white" style={{ fontSize: '1rem', padding: '0.875rem 2rem', borderColor: '#7360F2', color: '#7360F2' }}>
+                Chat on Viber
               </a>
             </div>
           </div>

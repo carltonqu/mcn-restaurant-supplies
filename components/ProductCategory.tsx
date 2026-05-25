@@ -290,12 +290,10 @@ function ProductCard({
               Interested in <strong>{product.name}</strong>? Send us a quick inquiry:
             </p>
             <a
-              href={`https://wa.me/639123456789?text=Hi! I'm interested in ${encodeURIComponent(product.name)}. Can you provide pricing and availability?`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`viber://chat?number=%2B639669765949&text=Hi! I'm interested in ${encodeURIComponent(product.name)}. Can you provide pricing and availability?`}
               style={{
                 display: 'block',
-                backgroundColor: '#25D366',
+                backgroundColor: '#7360F2',
                 color: '#ffffff',
                 textAlign: 'center',
                 padding: '0.625rem',
@@ -305,7 +303,7 @@ function ProductCard({
                 fontWeight: 600,
               }}
             >
-              Ask on WhatsApp →
+              Ask on Viber →
             </a>
           </div>
         )}

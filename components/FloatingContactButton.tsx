@@ -61,12 +61,10 @@ export default function FloatingContactButton() {
             Contact Us →
           </a>
           <a
-            href="https://wa.me/639669765949"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="viber://chat?number=%2B639669765949"
             style={{
               display: 'block',
-              backgroundColor: '#25D366',
+              backgroundColor: '#7360F2',
               color: '#ffffff',
               padding: '12px 20px',
               borderRadius: '12px',
@@ -77,7 +75,7 @@ export default function FloatingContactButton() {
               transition: 'all 0.2s ease',
             }}
           >
-            Chat on WhatsApp
+            Chat on Viber
           </a>
         </div>
       )}
