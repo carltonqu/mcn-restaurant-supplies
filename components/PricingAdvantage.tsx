@@ -10,7 +10,7 @@ const rows = [
     percent: '40%',
   },
   {
-    img: 'https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=80&h=80&fit=crop',
+    img: '/images/work-table-thumb.jpg',
     item: 'Stainless Work Table',
     ph: '₱18,000',
     mcn: '₱11,000',
@@ -18,7 +18,7 @@ const rows = [
     percent: '39%',
   },
   {
-    img: 'https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=80&h=80&fit=crop',
+    img: '/images/rice-cooker.jpg',
     item: 'Rice Cooker (Commercial)',
     ph: '₱8,000',
     mcn: '₱4,500',
