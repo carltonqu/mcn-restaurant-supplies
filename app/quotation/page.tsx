@@ -1,7 +1,7 @@
 import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
+import ViberButton from '@/components/ViberButton';
 import QuotationForm from '@/components/QuotationForm';
 
 export default function QuotationPage() {
@@ -13,7 +13,7 @@ export default function QuotationPage() {
         <QuotationForm />
       </main>
       <Footer />
-      <WhatsAppButton />
+      <ViberButton />
     </>
   );
 }

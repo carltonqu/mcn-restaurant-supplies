@@ -1,6 +1,6 @@
 'use client';
 
-export default function WhatsAppButton() {
+export default function ViberButton() {
   return (
     <a
       href="viber://chat?number=%2B639669765949"

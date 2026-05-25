@@ -9,7 +9,7 @@ import WhyChooseUs from '@/components/WhyChooseUs';
 import HowItWorks from '@/components/HowItWorks';
 import QuoteForm from '@/components/QuoteForm';
 import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
+import ViberButton from '@/components/ViberButton';
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
         <QuoteForm />
       </main>
       <Footer />
-      <WhatsAppButton />
+      <ViberButton />
     </>
   );
 }
